@@ -1,0 +1,33 @@
+const express = require('express')
+const app = express()
+
+const businessUnitsRouter = require('./routers/businessUnits')
+const applicationsRouter = require('./routers/applications')
+const userRouter = require('./routers/users')
+const userGroupRouter = require('./routers/userGroups')
+const devicesRouter = require('./routers/devices')
+const deviceGroupsRouter = require('./routers/deviceGroups')
+const azureBlobStorageRouter = require('./routers/azureBlobStorage')
+const associationsRouter = require('./routers/associations')
+const roleBasedActivitiesRouter = require('./routers/roleBasedActivities')
+const dashboardRouter = require('./routers/dashboard')
+const entityRouter = require('./routers/entity')
+const notificationRouter = require('./routers/notifications')
+const emailRouter = require('./routers/email')
+
+
+app.use('/businessUnits', businessUnitsRouter)
+app.use('/applications', applicationsRouter)
+app.use('/users', userRouter)
+app.use('/users', userGroupRouter)
+app.use('/devices', devicesRouter)
+app.use('/devices', deviceGroupsRouter)
+app.use('/associations', associationsRouter)
+app.use('/roleBasedActivities', roleBasedActivitiesRouter)
+app.use('/azure', azureBlobStorageRouter)
+app.use('/dashboard', dashboardRouter)
+app.use('/entity', entityRouter)
+app.use('/notifications', notificationRouter)
+app.use('/email', emailRouter)
+
+module.exports = app
